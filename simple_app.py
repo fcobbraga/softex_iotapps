@@ -39,10 +39,10 @@ if sresponse == "fail":
     sock.close()
     exit()
 
-while True:
-    # Send a request to the host
-    sock.send((device_id + "\n").encode()[:-1])
+# Send a request to the host
+sock.send((device_id + "\n").encode()[:-1])
 
+while True:
     # Get the host's response, no more than, say, 1,024 bytes
     response_data = sock.recv(1024)
 
